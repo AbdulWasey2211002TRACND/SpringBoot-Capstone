@@ -8,14 +8,14 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
-// @Table(name = "Users")
-// @Entity
+@Table(name = "Users")
+@Entity
 @Getter
 @Setter
 public class AuthenticationModel {
 
-    // @Id
-    // @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
 
     // columns
     private Long id;
@@ -29,7 +29,7 @@ public class AuthenticationModel {
 
     // constructor
     public AuthenticationModel(Long id, String username, String fullname, String password, String email, String dob,
-            String role,Boolean is_active) {
+            String role, Boolean is_active) {
         this.id = id;
         this.username = username;
         this.fullname = fullname;
@@ -37,7 +37,11 @@ public class AuthenticationModel {
         this.email = email;
         this.dob = dob;
         this.role = role;
-        this.is_active=is_active;
+        this.is_active = is_active;
+    }
+
+    public AuthenticationModel() {
+
     }
 
 }
